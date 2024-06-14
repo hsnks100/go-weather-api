@@ -8,6 +8,7 @@ import (
 	"strconv"
 	"strings"
 	"testing"
+	"time"
 
 	"github.com/hsnks100/go-weather-api/providers/kweather/data"
 )
@@ -163,7 +164,7 @@ func TestFindCoordinates(t *testing.T) {
 	fmt.Println(coord3)
 }
 func TestWeather(t *testing.T) {
-	we, err := WeahterInfo(serviceKey, "가산동")
+	we, err := WeahterInfo(serviceKey, "가산동", 16*time.Hour)
 	if err != nil {
 		t.Fatal(err)
 	}
